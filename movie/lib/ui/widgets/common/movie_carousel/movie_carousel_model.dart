@@ -29,7 +29,8 @@ class MovieCarouselModel extends StreamViewModel {
   @override
   void onData(data) {
     super.onData(data);
-    _pageController.jumpToPage(1);
+    _pageController.animateTo(1,
+        duration: const Duration(milliseconds: 100), curve: Curves.bounceIn);
     rebuildUi();
   }
 
