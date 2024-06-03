@@ -4,9 +4,8 @@ import 'package:movie/models/tmdb/tmdb_movie_basic.dart';
 import 'package:movie/services/movie_carousel_service.dart';
 import 'package:stacked/stacked.dart';
 
-final _movieCarouselService = locator<MovieCarouselService>();
-
 class MovieCarouselModel extends StreamViewModel {
+  final _movieCarouselService = locator<MovieCarouselService>();
   int currentPage = 1;
   late PageController _pageController;
 
@@ -30,6 +29,7 @@ class MovieCarouselModel extends StreamViewModel {
   @override
   void onData(data) {
     super.onData(data);
+    _pageController.jumpToPage(1);
     rebuildUi();
   }
 

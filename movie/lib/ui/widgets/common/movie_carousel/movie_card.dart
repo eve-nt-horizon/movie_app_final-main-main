@@ -6,7 +6,6 @@ import 'package:movie/constants.dart';
 import 'package:movie/models/tmdb/tmdb_movie_basic.dart';
 import 'package:movie/services/api_service.dart';
 import 'package:movie/ui/widgets/common/components/details_screen.dart';
-import 'package:movie/ui/widgets/common/movie_carousel/movie_carousel_model.dart';
 
 final _apiService = locator<ApiService>();
 
@@ -17,10 +16,8 @@ class MovieCard extends StatelessWidget {
   });
   final TMDBMovieBasic movie;
 
-
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: OpenContainer(
@@ -79,6 +76,4 @@ class MovieCard extends StatelessWidget {
       ],
     );
   }
-
-
 }

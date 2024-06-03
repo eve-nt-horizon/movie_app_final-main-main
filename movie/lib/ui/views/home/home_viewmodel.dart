@@ -20,7 +20,6 @@ class HomeViewModel extends StreamViewModel {
   User? get user => _firebaseAuthService.user;
 
   @override
-  // TODO: implement stream
   Stream<User?> get stream => _firebaseAuthService.onAuthStateChanged;
 
   Future search() async {
@@ -58,7 +57,5 @@ class HomeViewModel extends StreamViewModel {
     _searchController.dispose();
   }
 
-  void resetPage() {
-    
-  }
+  void resetPage() {}
 }
