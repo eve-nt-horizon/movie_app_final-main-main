@@ -21,10 +21,13 @@ class DetailsGenres extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var genres = _apiService.allGenresList
-        .where((val) => movie.genreIds!.contains(val['id']))
-        .map((val) => val['name'])
-        .toList();
+    var genres = [];
+    if (movie.genreIds != null) {
+      genres = _apiService.allGenresList
+          .where((val) => movie.genreIds!.contains(val['id']))
+          .map((val) => val['name'])
+          .toList();
+    }
     return Padding(
       padding: EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
       child: SizedBox(

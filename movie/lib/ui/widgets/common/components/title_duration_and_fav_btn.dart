@@ -43,7 +43,7 @@ class TitleDurationAndFabBtn extends StatelessWidget {
                       "PG-13",
                       style: TextStyle(color: kTextLightColor),
                     ),
-                    SizedBox(width: kDefaultPadding),
+                    const SizedBox(width: kDefaultPadding),
                     const Text(
                       "2h 32min",
                       style: TextStyle(color: kTextLightColor),
@@ -70,9 +70,9 @@ class TitleDurationAndFabBtn extends StatelessWidget {
                     IconData icon;
                     if (snapshot.data != null &&
                         snapshot.data!.contains(movie.id)) {
-                      icon = Icons.remove;
+                      icon = Icons.favorite;
                     } else {
-                      icon = Icons.add;
+                      icon = Icons.favorite_border_outlined;
                     }
                     return IconButton(
                         onPressed: () async {

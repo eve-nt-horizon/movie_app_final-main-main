@@ -38,5 +38,5 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => ApiService());
   locator.registerLazySingleton(() => MovieCarouselService());
   locator.registerLazySingleton(() => FirebaseAuthService(app: app));
-  locator.registerLazySingleton(()=>FirestoreService());
+  locator.registerLazySingleton(() => FirestoreService());
 }

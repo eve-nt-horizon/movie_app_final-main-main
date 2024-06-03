@@ -44,4 +44,11 @@ class TMDBRequestBuilder {
         .setPath('/3/genre/movie/list')
         .build();
   }
+
+  static Uri buildQueryById(int id) {
+    return uriBuilder
+        .setAuthority(_baseUrl)
+        .setPath('/3/movie/$id?language=en-US')
+        .build();
+  }
 }

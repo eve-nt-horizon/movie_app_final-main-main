@@ -54,4 +54,19 @@ class ApiService {
 
     return res.data;
   }
+
+  Future<TMDBMovieBasic> findMovieById(int id) async {
+    Uri uri = TMDBRequestBuilder.buildQueryById(id);
+    var res = await dio.get(uri.toString());
+    return TMDBMovieBasic.fromJson(res.data);
+  }
+
+  Future<List<TMDBMovieBasic>> findAllMovies(List<int> ids) async {
+    List<TMDBMovieBasic> res = [];
+    for (int id in ids) {
+      TMDBMovieBasic movie = await findMovieById(id);
+      res.add(movie);
+    }
+    return res;
+  }
 }

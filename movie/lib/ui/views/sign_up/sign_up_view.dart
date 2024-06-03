@@ -23,15 +23,15 @@ class SignUpView extends StackedView<SignUpViewModel> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(height: 50),
-            
+
                 // logo
                 const Icon(
                   Icons.lock,
                   size: 100,
                 ),
-            
+
                 const SizedBox(height: 50),
-            
+
                 // welcome back, you've been missed!
                 Text(
                   'Sign up now!',
@@ -40,27 +40,27 @@ class SignUpView extends StackedView<SignUpViewModel> {
                     fontSize: 16,
                   ),
                 ),
-            
+
                 const SizedBox(height: 25),
-            
+
                 // email textfield
                 MyTextField(
                   controller: viewModel.emailController,
                   hintText: 'Email',
                   obscureText: false,
                 ),
-            
+
                 const SizedBox(height: 10),
-            
+
                 // password textfield
                 MyTextField(
                   controller: viewModel.passwordController,
                   hintText: 'Password',
                   obscureText: true,
                 ),
-            
+
                 const SizedBox(height: 10),
-            
+
                 // forgot password?
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -74,17 +74,17 @@ class SignUpView extends StackedView<SignUpViewModel> {
                     ],
                   ),
                 ),
-            
+
                 const SizedBox(height: 25),
-            
+
                 // sign in button
                 MyButton(
-                  onTap:()=> viewModel.signUp(),
+                  onTap: () => viewModel.signUp(),
                   text: 'Sign Up',
                 ),
-            
+
                 const SizedBox(height: 50),
-            
+
                 // or continue with
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -105,7 +105,7 @@ class SignUpView extends StackedView<SignUpViewModel> {
                     ],
                   ),
                 ),
-            
+
                 // not a member? register now             )
               ],
             ),

@@ -4,4 +4,7 @@ import 'package:stacked/stacked.dart';
 class MovieCarouselService {
   ReactiveList<TMDBMovieBasic> movieList =
       ReactiveList.from([TMDBMovieBasic(id: -1, title: '')]);
+
+  ReactiveList<TMDBMovieBasic> watchList =
+      ReactiveList.from([TMDBMovieBasic(id: -1, title: '')]);
 }

@@ -21,7 +21,6 @@ class SignUpViewModel extends BaseViewModel {
 
   @override
   void dispose() {
-
     super.dispose();
     emailController.dispose();
     passwordController.dispose();

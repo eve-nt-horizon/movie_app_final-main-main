@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:movie/constants.dart';
 import 'package:movie/ui/widgets/common/movie_carousel/movie_card.dart';
 import 'package:stacked/stacked.dart';
 
-import 'movie_carousel_model.dart';
+import 'watchlist_carousel_model.dart';
 
-class MovieCarousel extends StackedView<MovieCarouselModel> {
-  const MovieCarousel({super.key});
+class WatchlistCarousel extends StackedView<WatchlistCarouselModel> {
+  const WatchlistCarousel({super.key});
 
   @override
   Widget builder(
     BuildContext context,
-    MovieCarouselModel viewModel,
+    WatchlistCarouselModel viewModel,
     Widget? child,
   ) {
     return Padding(
@@ -24,19 +25,22 @@ class MovieCarousel extends StackedView<MovieCarouselModel> {
           },
           controller: viewModel.pageController,
           physics: const ClampingScrollPhysics(),
-          itemCount: viewModel.movieList.length,
+          itemCount: viewModel.watchList.length,
           itemBuilder: (context, index) => MovieCard(
-            movie: viewModel.movieList[index],
+            movie: viewModel.watchList[index],
           ),
         ),
       ),
     );
   }
 
-
   @override
-  MovieCarouselModel viewModelBuilder(
+  WatchlistCarouselModel viewModelBuilder(
     BuildContext context,
   ) =>
-      MovieCarouselModel();
+      WatchlistCarouselModel();
+
+    @override
+  void onViewModelReady(WatchlistCarouselModel viewModel) => SchedulerBinding.instance
+      .addPostFrameCallback((timeStamp) => viewModel.runStartupLogic());
 }
